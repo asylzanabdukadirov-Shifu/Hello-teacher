@@ -1,0 +1,2 @@
+PASS: 27760 assertions; exhaustive small strings, 1000 random string cases,
+400 random trees checked by subset enumeration and all-pairs BFS, and a real hash collision.

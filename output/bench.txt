@@ -1,0 +1,9 @@
+A. Looking for 'AAAA...AAB' (length 2000) in a text of only A letters: naive loop and your KMP, milliseconds (average of 3 runs)
+   text  20000   naive     57,6 ms   KMP    4,0 ms
+   text  40000   naive    125,0 ms   KMP    2,8 ms
+   text  80000   naive    232,7 ms   KMP    0,7 ms
+B. Your edit distance on two random strains, milliseconds (average of 3 runs)
+   length   500   edit distance    11,1 ms
+   length  1000   edit distance     7,3 ms
+   length  2000   edit distance    27,1 ms
+   length  4000   edit distance   103,6 ms

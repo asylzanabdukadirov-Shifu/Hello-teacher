@@ -4,6 +4,8 @@ Student ID: **250788**
 Name: **[fill in your name]**  
 Group: **[fill in your group]**
 
+GitHub repository: [asylzanabdukadirov-Shifu/Hello-teacher](https://github.com/asylzanabdukadirov-Shifu/Hello-teacher)
+
 This is an AI-assisted implementation and report draft. Review the code and revise the explanations in your own words before submission, as required by the assignment. The AI contribution is described below.
 
 ## Run
@@ -130,7 +132,7 @@ For the longest chain, DFS returns each vertex's greatest downward depth; the tw
 - [x] Five mission commits, plus starter/report commits, on local `main`; AI authorship disclosed.
 - [ ] Fill in the student's name and group.
 - [ ] Study and revise the code and answers in accordance with the course rules.
-- [ ] Publish the reviewed repository to public GitHub with the commit history.
+- [ ] Review the public GitHub copy and confirm that all files and the commit history are present.
 - [ ] Submit the public repository link in Moodle before the deadline shown there.
 
-No GitHub repository has been created or pushed, and nothing has been submitted to Moodle by this assistant. The Moodle quiz is separate: 20 questions in 30 minutes, worth 50 points, with no AI use during the quiz.
+Nothing has been submitted to Moodle by this assistant. The Moodle quiz is separate: 20 questions in 30 minutes, worth 50 points, with no AI use during the quiz.

@@ -4,6 +4,8 @@ import java.util.*;
  * Missions 3 and 4. Find a word in a long text.
  */
 public class Marker {
+    private static final long BASE = 257;
+    private static final long MOD = 1_000_000_007;
 
     /**
      * Mission 3a. The prefix function of p. pi[i] = the length of the longest proper prefix of p[0..i] that is
@@ -64,7 +66,57 @@ public class Marker {
      * Example: a = "ACGTAC", b = "TTACGT", k = 4: the words of a are ACGT, CGTA, GTAC; only ACGT is in b, so the answer is 1.
      */
     public static int sharedWords(String a, String b, int k) {
-        // TODO Mission 4
-        return -1;
+        if (k < 0) throw new IllegalArgumentException("Window length must not be negative");
+        if (k == 0) return a.length() + 1;
+        if (k > a.length() || k > b.length()) return 0;
+
+        long highestPower = 1;
+        for (int i = 1; i < k; i++) highestPower = highestPower * BASE % MOD;
+
+        // Keep every candidate position: different words may have the same hash.
+        Map<Long, List<Integer>> windows = new HashMap<>();
+        long hashB = firstHash(b, k);
+        for (int j = 0; j <= b.length() - k; j++) {
+            windows.computeIfAbsent(hashB, unused -> new ArrayList<>()).add(j);
+            if (j < b.length() - k) {
+                hashB = roll(hashB, b.charAt(j), b.charAt(j + k), highestPower);
+            }
+        }
+
+        int shared = 0;
+        long hashA = firstHash(a, k);
+        for (int i = 0; i <= a.length() - k; i++) {
+            List<Integer> candidates = windows.get(hashA);
+            if (candidates != null) {
+                for (int j : candidates) {
+                    if (sameWord(a, i, b, j, k)) {
+                        shared++;
+                        break; // This position in A counts only once.
+                    }
+                }
+            }
+            if (i < a.length() - k) {
+                hashA = roll(hashA, a.charAt(i), a.charAt(i + k), highestPower);
+            }
+        }
+        return shared;
+    }
+
+    private static long firstHash(String s, int k) {
+        long hash = 0;
+        for (int i = 0; i < k; i++) hash = (hash * BASE + s.charAt(i)) % MOD;
+        return hash;
+    }
+
+    private static long roll(long hash, char outgoing, char incoming, long highestPower) {
+        long remaining = (hash - outgoing * highestPower % MOD + MOD) % MOD;
+        return (remaining * BASE + incoming) % MOD;
+    }
+
+    private static boolean sameWord(String a, int i, String b, int j, int k) {
+        for (int offset = 0; offset < k; offset++) {
+            if (a.charAt(i + offset) != b.charAt(j + offset)) return false;
+        }
+        return true;
     }
 }

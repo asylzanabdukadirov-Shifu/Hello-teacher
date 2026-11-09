@@ -83,7 +83,7 @@ Equal hashes can belong to different words, so a candidate is counted only after
 
 **OpenAI Codex (ChatGPT)** was used to read the assignment and starter, draft the Java implementations for Missions 1-5, generate additional tests, run checks and timings, generate the personal data from the supplied ID, capture the lab screenshot, and draft this README and the Russian study guide. This is a substantive AI-generated draft, not merely an AI code review; no claim is made that the student has already independently written, revised or understood it.
 
-The local Git commits were made during this session and are explicitly attributed to **Codex (AI assistant)**. They record actual implementation steps and do not represent a prior history of unaided student work. Before submission, the student must study the solution, make their own revisions and answers, keep this disclosure accurate, and follow the course's AI-use rules.
+The Git commits record the implementation steps from this session and use the repository owner's GitHub identity, **asylzanabdukadirov-Shifu**, in their author metadata. The code and report were prepared with Codex as disclosed above; the commit metadata does not represent a history of unaided student work. Before submission, the student must study the solution, make their own revisions and answers, keep this disclosure accurate, and follow the course's AI-use rules.
 
 Sources: the supplied starter project, `docs/Assignment4.pdf`, `START_HERE.md`, `docs/Hints.md`, and `docs/Assignment4_defense_prep.pdf`. No external website or book code was used. The provided `Main.java`, `Input.java`, `Render.java`, `Generator.java`, `Bench.java`, `lab.html`, `Check.java`, and `MakeVariant.java` are unchanged.
 
